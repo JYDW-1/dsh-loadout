@@ -1,0 +1,5 @@
+# dsh-loadout bundle layer: one Host row serving /loadout/api, one Client page
+# registered into settings.section.
+- insert:
+    - id: loadout
+      name: dsh-loadout

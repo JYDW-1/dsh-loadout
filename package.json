@@ -1,0 +1,50 @@
+{
+  "name": "dsh-loadout",
+  "version": "0.1.0",
+  "description": "配置码：把 DSH 的插件与调校打包成一段可分享的文本，或粘贴别人的清单挑着装。",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "loadout",
+    "settings"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JYDW-1/dsh-loadout.git"
+  },
+  "homepage": "https://github.com/JYDW-1/dsh-loadout#readme",
+  "bugs": {
+    "url": "https://github.com/JYDW-1/dsh-loadout/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  }
+}
