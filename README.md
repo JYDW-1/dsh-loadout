@@ -50,14 +50,16 @@ LOAD1.<base64url(deflateRaw(JSON))>.<sha256 前 8 位>
 
 ## 安装
 
-从 npm（发布后）：
-
 ```bash
-dsh plugin install dsh-loadout
+git clone https://github.com/JYDW-1/dsh-loadout.git
 ```
 
-从本地目录（开发时）：`plugin_manager` / `dsh plugin install` 指向本仓库目录即可，`dsh.bundle.patch`
-会把它接进 profile。装好后 设置 面板里多出「配置码」一页（在「预设」与「插件市场」之间）。
+然后在 DSH 里把克隆下来的目录作为本地 bundle 装进 profile：`plugin_manager` 的 `install_bundle`
+指向这个目录（或等价的 `dsh plugin install <目录>`），它会自己写 profile 的 `package.json` 与
+`cordis.patch.yml`。装好后 设置 面板里多出「配置码」一页（在「预设」与「插件市场」之间）。
+
+改代码后：Host 半边（`index.js`）需要重载插件条目（禁用再启用 `include:loadout`）；Client 半边
+由 client-hmr 自动热更。npm 版本尚未发布。
 
 ## Host API
 
