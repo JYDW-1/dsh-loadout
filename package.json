@@ -1,6 +1,6 @@
 {
   "name": "dsh-loadout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "配置码：把 DSH 的插件与调校打包成一段可分享的文本，或粘贴别人的清单挑着装。",
   "type": "module",
   "main": "./index.js",

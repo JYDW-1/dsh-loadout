@@ -580,6 +580,12 @@ function registerRoutes(ctx) {
 
 export const name = SELF
 
+// Routes need the web server. Declaring it here (rather than only probing
+// `ctx.get('webServer')` inside apply) makes the loader defer apply until the
+// service exists — without it, whether the API registers at all depends on
+// which plugin happened to mount first.
+export const inject = ['webServer']
+
 export function apply(ctx) {
 	ctx.effect(() => {
 		const dispose = registerRoutes(ctx)
